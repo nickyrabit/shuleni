@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     android:background="#e5e5e5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,7 +19,8 @@
                   <ImageView
                       android:layout_width="match_parent"
                       android:layout_height="300dp"
-                      android:id="@+id/detail_image"/>
+                      android:id="@+id/detail_image"
+                      android:layout_alignParentTop="true"/>
 
 
                   <TextView
@@ -47,13 +49,26 @@
 
           android:textAlignment="gravity"
           />
-      <Button
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:text="Back"
-          android:id="@+id/ticket_Buybutton"
-          android:shadowColor="@color/bg_login"/>
 
+
+      <mehdi.sakout.fancybuttons.FancyButton
+          android:id="@+id/ticket_Buybutton"
+          android:padding="12dp"
+          android:layout_width="300dp"
+          android:layout_gravity="center_horizontal"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="70dp"
+          android:layout_marginBottom="24dp"
+          fancy:fb_textColor="@color/genre"
+          fancy:fb_text="Back"
+          fancy:fb_textSize="20dp"
+          fancy:fb_ghost="true"
+          fancy:fb_useSystemFont="true"
+          fancy:fb_borderWidth="1dp"
+          fancy:fb_borderColor="@color/colorPrimary"
+          fancy:fb_radius="25dp"
+          fancy:fb_focusColor="@color/list_divider"
+          />
 
 </LinearLayout>
 

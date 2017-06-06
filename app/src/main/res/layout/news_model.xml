@@ -8,16 +8,7 @@
     android:id="@+id/card_t"
     >
 
-    <TextView
-        android:id="@+id/news_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:text="Dog Tag"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#040404"
-        android:textStyle="bold"
-        android:typeface="sans" />
+
 
     <ImageView
         android:id="@+id/ticket_MovieImage"
@@ -29,6 +20,30 @@
         android:src="@mipmap/ic_launcher" />
 
 
+    <TextView
+        android:id="@+id/news_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:text="Dog Tag"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#040404"
+        android:textStyle="bold"
+
+      android:layout_marginTop="5dp"/>
+
+
+    <TextView
+        android:id="@+id/news_snippet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create an NFC Pet Tag"
+        android:layout_marginLeft="4dp"
+
+
+        android:maxLines="2"
+        android:textColor="@android:color/secondary_text_dark"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/news_time"
@@ -38,7 +53,7 @@
         android:layout_margin="4dp"
         android:textStyle="bold"
         android:textColor="@android:color/secondary_text_dark"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 
 

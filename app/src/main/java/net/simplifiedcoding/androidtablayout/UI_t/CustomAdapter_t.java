@@ -28,7 +28,7 @@ public class CustomAdapter_t extends BaseAdapter {
     public class ViewHolder{
         //ImageView image;
         TextView title;
-        TextView time,id;
+        TextView time,id,snippet;
         LinearLayout card_t;
     }
 
@@ -65,35 +65,26 @@ public class CustomAdapter_t extends BaseAdapter {
        //    holder.image = (ImageView)convertView.findViewById(R.id.MovieImage);
             holder.title = (TextView)convertView.findViewById(R.id.news_title);
             holder.time = (TextView)convertView.findViewById(R.id.news_time);
-
+            holder.snippet = (TextView)convertView.findViewById(R.id.news_snippet);
             convertView.setTag(holder);
-
         }
 
-
-
-//ON main activity
+        //ON main activity
         TextView NewsTitle = (TextView) convertView.findViewById(R.id.news_title);
         ImageView img = (ImageView) convertView.findViewById(R.id.ticket_MovieImage);
       //  TextView id = (TextView) convertView.findViewById(R.id.id);
-
         //TextView seats = (TextView) convertView.findViewById(R.id.seats);
         TextView time = (TextView) convertView.findViewById(R.id.news_time);
-
-
-
         final Events_t s = (Events_t) this.getItem(position);
-        final Events_t i = (Events_t) this.getItem(position);
-        final Events_t j = (Events_t) this.getItem(position);
-        final Events_t k = (Events_t) this.getItem(position);
+        TextView snippet = (TextView) convertView.findViewById(R.id.news_snippet);
 
         //nameTxt.setText(s.getName());
       //  id.setText(i.getId());
         //seats.setText(j.getSeats());
-
         NewsTitle.setText(s.getTitle());
-        time.setText(s.getTime());
+        time.setText("Published On: "+s.getTime());
         PicassoClient_t.downloadImage(c,s.getUrl(),img);
+        snippet.setText(s.getDetail().substring(0,72)+"...");
 
 
 

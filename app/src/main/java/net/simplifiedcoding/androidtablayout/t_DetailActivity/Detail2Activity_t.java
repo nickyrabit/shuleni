@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,21 +14,23 @@ import net.simplifiedcoding.androidtablayout.MainActivity;
 import net.simplifiedcoding.androidtablayout.R;
 import net.simplifiedcoding.androidtablayout.UI_t.PicassoClient_t;
 
+import mehdi.sakout.fancybuttons.FancyButton;
+
 
 public class Detail2Activity_t extends AppCompatActivity {
 
     TextView TitleTxt;
     TextView DetailsTxt;
     //TextView description_detail;// nimeitoa nkaiekandani
-    Button back;
+    FancyButton back;
     ImageView ImageDetail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.news_activity_detail);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //DECLARATION
-        back = (Button) findViewById(R.id.ticket_Buybutton);
+        back = (FancyButton) findViewById(R.id.ticket_Buybutton);
         TitleTxt= (TextView) findViewById(R.id.title_detail);
         //seatsTxt = (TextView) findViewById(R.id.ticket_seatsDetailTxt);
         DetailsTxt = (TextView) findViewById(R.id.description_detail);
@@ -69,6 +72,21 @@ public class Detail2Activity_t extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // app icon in action bar clicked; goto parent activity.
+                Intent homeIntent = new Intent(this,MainActivity.class);
+                startActivity(homeIntent);
+
+
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 }
 
