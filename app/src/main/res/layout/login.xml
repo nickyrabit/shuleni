@@ -1,0 +1,95 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorPrimary"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="56dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <ImageView android:src="@mipmap/ic_account_circle_white_48dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center_horizontal" />
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/username_field"
+                android:inputType="textCapWords"
+                android:hint="Name"
+                android:ems="10"
+
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/password_field"
+                android:hint="Password"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+            <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/login"
+            android:padding="12dp"
+            android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="24dp"
+                fancy:fb_textColor="@color/white"
+                fancy:fb_text="Login"
+                fancy:fb_textSize="20dp"
+                fancy:fb_ghost="true"
+                fancy:fb_useSystemFont="true"
+                fancy:fb_borderWidth="1dp"
+                fancy:fb_borderColor="@color/list_divider"
+                fancy:fb_radius="25dp"
+                fancy:fb_focusColor="@color/list_divider"
+                />
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Forgot Your Password?"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:id="@+id/textView"
+
+            />
+
+
+
+    </LinearLayout>
+</ScrollView>

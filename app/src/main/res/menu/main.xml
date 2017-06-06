@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.setactionbartitletextposition_android_examples.com.MainActivity" >
+
+    <item
+        android:id="@+id/empty"
+        android:title="@string/options"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@mipmap/ic_more_vert_black_24dp">
+
+        <menu>
+
+            <item android:id="@+id/action_settings"
+                android:icon="@mipmap/ic_settings_black_24dp"
+                app:showAsAction="ifRoom"
+                android:title="@string/settings" />
+
+            <item android:id="@+id/action_about"
+                android:icon="@mipmap/ic_person_black_24dp"
+                app:showAsAction="ifRoom"
+                android:title="@string/about" />
+
+            <item android:id="@+id/action_log_out"
+                android:icon="@mipmap/ic_power_settings"
+                app:showAsAction="ifRoom"
+                android:title="@string/logout" />
+        </menu>
+
+    </item>
+</menu>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#e5e5e5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+      <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="300dp"
+                      android:id="@+id/detail_image"/>
+
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/title_detail"
+                      android:textSize="60px"
+                      android:text="DID"
+                      android:textStyle="bold"
+                      android:layout_marginLeft="10dp"
+                      android:layout_marginStart="10dp"
+                      android:layout_marginTop="260dp"
+
+                      />
+            </RelativeLayout>
+      </FrameLayout>
+
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/description_detail"
+          android:layout_margin="10dp"
+          android:text="WORK "
+          android:textSize="30px"
+
+          android:textAlignment="gravity"
+          />
+      <Button
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:text="Back"
+          android:id="@+id/ticket_Buybutton"
+          android:shadowColor="@color/bg_login"/>
+
+
+</LinearLayout>
+
+
+
+
+
+
+

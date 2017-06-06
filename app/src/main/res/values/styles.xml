@@ -1,0 +1,51 @@
+<resources>
+
+
+
+
+
+    <!-- Base application theme. -->
+    <!-- changing it to no actionbar -->
+    <style name="ActivityTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="tabIndicatorColor">?attr/colorAccent</item>
+    </style>
+
+
+    <style name="MaterialSettings.Green" parent="MaterialSettingsTheme">
+        <item name="msColorPrimary">@color/colorPrimary</item>
+        <item name="msColorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="msColorAccent">?attr/colorAccent</item>
+        <item name="msColorHeader">?attr/colorAccent</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
+
+
+
+
+
+
+    <style name="Widget" />
+
+    <style name="Widget.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse" />
+
+    <style name="Widget.Light" />
+
+    <style name="Widget.Light.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid" />
+
+    <style name="Widget.ActionBar.Transparent">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.Light.ActionBar.Transparent">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+</resources>
