@@ -1,11 +1,13 @@
 package net.simplifiedcoding.androidtablayout.t_DetailActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,7 +22,7 @@ import mehdi.sakout.fancybuttons.FancyButton;
 public class Detail2Activity_t extends AppCompatActivity {
 
     TextView TitleTxt;
-    TextView DetailsTxt;
+    WebView DetailsTxt;
     //TextView description_detail;// nimeitoa nkaiekandani
     FancyButton back;
     ImageView ImageDetail;
@@ -33,8 +35,11 @@ public class Detail2Activity_t extends AppCompatActivity {
         back = (FancyButton) findViewById(R.id.ticket_Buybutton);
         TitleTxt= (TextView) findViewById(R.id.title_detail);
         //seatsTxt = (TextView) findViewById(R.id.ticket_seatsDetailTxt);
-        DetailsTxt = (TextView) findViewById(R.id.description_detail);
+        DetailsTxt = (WebView) findViewById(R.id.description_detail);
         ImageDetail = (ImageView) findViewById(R.id.detail_image);
+
+        DetailsTxt.getSettings();
+        DetailsTxt.setBackgroundColor(Color.parseColor("#e5e5e5"));
 
         //RECIVE THE DATA
         Intent i = this.getIntent();
@@ -46,11 +51,16 @@ public class Detail2Activity_t extends AppCompatActivity {
 
         //BIND
         TitleTxt.setText("\t" + title);
-        DetailsTxt.setText("\t" + details);
+       // DetailsTxt.setText("\t" + details);
+
+        //placing the HTML Wb view
+        StringBuilder sb = new StringBuilder("<html><body>");
+        sb.append(details);
+        sb.append("</body></html>");
+        DetailsTxt.loadData(sb.toString(), "text/html", "UTF-8");
 
         //setting theimae here
         PicassoClient_t.downloadImage(getApplicationContext(),imageUrl,ImageDetail);
-
         back.setOnClickListener(new View.OnClickListener() {
 
             @Override

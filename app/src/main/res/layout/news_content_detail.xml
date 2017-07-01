@@ -39,14 +39,14 @@
       </FrameLayout>
 
 
-      <TextView
+      <WebView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:id="@+id/description_detail"
           android:layout_margin="10dp"
           android:text="WORK "
           android:textSize="30px"
-
+          android:background="#e5e5e5"
           android:textAlignment="gravity"
           />
 
