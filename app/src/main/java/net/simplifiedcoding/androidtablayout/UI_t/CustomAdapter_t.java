@@ -79,7 +79,7 @@ public class CustomAdapter_t extends BaseAdapter {
         TextView time = (TextView) convertView.findViewById(R.id.news_time);
         final Events_t s = (Events_t) this.getItem(position);
         WebView snippet = (WebView) convertView.findViewById(R.id.news_snippet);
-
+        snippet.loadUrl("javascript:document.body.style.color ='@android:color/secondary_text_dark';");
         //nameTxt.setText(s.getName());
       //  id.setText(i.getId());
         //seats.setText(j.getSeats());
