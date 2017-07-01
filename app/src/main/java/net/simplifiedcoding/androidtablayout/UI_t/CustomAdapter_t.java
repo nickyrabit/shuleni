@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,7 +29,8 @@ public class CustomAdapter_t extends BaseAdapter {
     public class ViewHolder{
         //ImageView image;
         TextView title;
-        TextView time,id,snippet;
+        TextView time,id;
+        WebView snippet;
         LinearLayout card_t;
     }
 
@@ -65,7 +67,7 @@ public class CustomAdapter_t extends BaseAdapter {
        //    holder.image = (ImageView)convertView.findViewById(R.id.MovieImage);
             holder.title = (TextView)convertView.findViewById(R.id.news_title);
             holder.time = (TextView)convertView.findViewById(R.id.news_time);
-            holder.snippet = (TextView)convertView.findViewById(R.id.news_snippet);
+            holder.snippet = (WebView)convertView.findViewById(R.id.news_snippet);
             convertView.setTag(holder);
         }
 
@@ -76,7 +78,7 @@ public class CustomAdapter_t extends BaseAdapter {
         //TextView seats = (TextView) convertView.findViewById(R.id.seats);
         TextView time = (TextView) convertView.findViewById(R.id.news_time);
         final Events_t s = (Events_t) this.getItem(position);
-        TextView snippet = (TextView) convertView.findViewById(R.id.news_snippet);
+        WebView snippet = (WebView) convertView.findViewById(R.id.news_snippet);
 
         //nameTxt.setText(s.getName());
       //  id.setText(i.getId());
@@ -84,11 +86,17 @@ public class CustomAdapter_t extends BaseAdapter {
         NewsTitle.setText(s.getTitle());
         time.setText("Published On: "+s.getTime());
         PicassoClient_t.downloadImage(c,s.getUrl(),img);
-        snippet.setText(s.getDetail().substring(0,72)+"...");
+    //    snippet.setText(s.getDetail().substring(0,72)+"...");
+
+        //placing the HTML Wb view
+        StringBuilder sb = new StringBuilder("<html><body>");
+        sb.append(s.getDetail().substring(0,72));
+        sb.append("...");
+        sb.append("</body></html>");
+        snippet.loadData(sb.toString(), "text/html", "UTF-8");
 
 
-
-convertView.setOnClickListener(new View.OnClickListener() {
+        convertView.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
 

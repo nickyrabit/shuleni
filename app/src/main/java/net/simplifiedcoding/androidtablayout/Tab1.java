@@ -18,6 +18,8 @@ import net.simplifiedcoding.androidtablayout.t_MySQL.Downloader;
 //Our class extending fragment
 public class Tab1 extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
+    //doing the initializing for boolen thingy
+    public Boolean initialized = false;
 
     private SwipeRefreshLayout swipeView;
     //public static final String urlAddress = "http://192.168.188.1:8080/shule/news.php?";
@@ -47,8 +49,18 @@ public class Tab1 extends Fragment implements SwipeRefreshLayout.OnRefreshListen
         swipeView.setDistanceToTriggerSync(20);// in dips
         swipeView.setSize(SwipeRefreshLayout.DEFAULT);// LARGE also can be used
 
-        //Poppulating the entire layout
-        new Downloader(getContext(), urlAddress, lv).execute();
+        //placing the if condition
+         if (initialized) {
+            //Poppulating the entire layout
+            new Downloader(getContext(), urlAddress, lv).execute();
+             initialized=true;
+        } else {
+             //if it has already been initialised
+             //do nothing
+        }
+
+
+
 
         swipeView.postDelayed(new Runnable() {
 
