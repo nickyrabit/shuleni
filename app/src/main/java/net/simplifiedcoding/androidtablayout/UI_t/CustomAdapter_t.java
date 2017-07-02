@@ -61,6 +61,8 @@ public class CustomAdapter_t extends BaseAdapter {
         {
             convertView= LayoutInflater.from(c).inflate(R.layout.news_model,parent,false);
 
+
+
             //TRYING
             holder = new ViewHolder();
             holder.card_t = (LinearLayout) convertView.findViewById(R.id.card_t);

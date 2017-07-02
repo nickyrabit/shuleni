@@ -6,6 +6,10 @@ import android.os.AsyncTask;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.github.florent37.fiftyshadesof.FiftyShadesOf;
+
+import net.simplifiedcoding.androidtablayout.R;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,7 +27,7 @@ public class Downloader extends AsyncTask<Void,Void,String> {
     ListView lv;
 
     ProgressDialog pd;
-
+    FiftyShadesOf fiftyShadesOf;
     public Downloader(Context c, String urlAddress, ListView lv) {
         this.c = c;
         this.urlAddress = urlAddress;
@@ -37,10 +41,13 @@ public class Downloader extends AsyncTask<Void,Void,String> {
         super.onPreExecute();
 
 
-        pd=new ProgressDialog(c);
-        pd.setTitle("Retrieve");
-        pd.setMessage("Retrieving...Please wait");
+        //pd=new ProgressDialog(c);
+        //pd.setTitle("Retrieve");
+        //pd.setMessage("Retrieving...Please wait");
 //       pd.show();
+
+         fiftyShadesOf = FiftyShadesOf.with(c).on(R.id.container_toolbar).start();
+
 
     }
 
@@ -52,7 +59,9 @@ public class Downloader extends AsyncTask<Void,Void,String> {
     @Override
     protected void onPostExecute(String jsonData) {
         super.onPostExecute(jsonData);
-        pd.dismiss();
+        //pd.dismiss();
+        fiftyShadesOf.stop();
+
 
         if(jsonData==null)
 

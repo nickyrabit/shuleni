@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.github.florent37.fiftyshadesof.FiftyShadesOf;
+
 import net.simplifiedcoding.androidtablayout.t_MySQL.Downloader;
 
 /**
@@ -48,15 +50,15 @@ public class Tab1 extends Fragment implements SwipeRefreshLayout.OnRefreshListen
         swipeView.setDistanceToTriggerSync(20);// in dips
         swipeView.setSize(SwipeRefreshLayout.DEFAULT);// LARGE also can be used
 
-        //placing the if condition
-         if (initialized) {
-            //Poppulating the entire layout
+        //avoidiing hte reload
+        if(savedInstanceState == null) {
+
+            final FiftyShadesOf fiftyShadesOf = FiftyShadesOf.with(getContext()).on(R.id.container_toolbar).start();
+
             new Downloader(getContext(), urlAddress, lv).execute();
-             initialized=true;
-        } else {
-             //if it has already been initialised
-             //do nothing
+
         }
+
 
 
 
