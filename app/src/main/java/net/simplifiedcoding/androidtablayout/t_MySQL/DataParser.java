@@ -38,8 +38,6 @@ public class DataParser extends AsyncTask<Void,Void,Boolean> {
     }
 
 
-
-
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -90,12 +88,14 @@ public class DataParser extends AsyncTask<Void,Void,Boolean> {
                 String url = jo.getString("url");
                 String detail = jo.getString("detail");
                 String time = jo.getString("time");
+                String hint = jo.getString("hint");
 
                 event = new Events_t();
                 event.setTitle(title);
                 event.setUrl(url);
                 event.setDetail(detail);
                 event.setTime(time);
+                event.setHint(hint);
                 events.add(event);
             }
 

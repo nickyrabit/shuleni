@@ -30,7 +30,7 @@ public class CustomAdapter_t extends BaseAdapter {
         //ImageView image;
         TextView title;
         TextView time,id;
-        WebView snippet;
+        TextView snippet;
         LinearLayout card_t;
     }
 
@@ -67,7 +67,7 @@ public class CustomAdapter_t extends BaseAdapter {
        //    holder.image = (ImageView)convertView.findViewById(R.id.MovieImage);
             holder.title = (TextView)convertView.findViewById(R.id.news_title);
             holder.time = (TextView)convertView.findViewById(R.id.news_time);
-            holder.snippet = (WebView)convertView.findViewById(R.id.news_snippet);
+            holder.snippet = (TextView)convertView.findViewById(R.id.news_snippet);
             convertView.setTag(holder);
         }
 
@@ -78,22 +78,15 @@ public class CustomAdapter_t extends BaseAdapter {
         //TextView seats = (TextView) convertView.findViewById(R.id.seats);
         TextView time = (TextView) convertView.findViewById(R.id.news_time);
         final Events_t s = (Events_t) this.getItem(position);
-        WebView snippet = (WebView) convertView.findViewById(R.id.news_snippet);
-        snippet.loadUrl("javascript:document.body.style.color ='@android:color/secondary_text_dark';");
+        TextView snippet = (TextView) convertView.findViewById(R.id.news_snippet);
         //nameTxt.setText(s.getName());
       //  id.setText(i.getId());
         //seats.setText(j.getSeats());
         NewsTitle.setText(s.getTitle());
         time.setText("Published On: "+s.getTime());
         PicassoClient_t.downloadImage(c,s.getUrl(),img);
-    //    snippet.setText(s.getDetail().substring(0,72)+"...");
+        snippet.setText(s.getDetail().substring(0,72)+"...");
 
-        //placing the HTML Wb view
-        StringBuilder sb = new StringBuilder("<html><body>");
-        sb.append(s.getDetail().substring(0,72));
-        sb.append("...");
-        sb.append("</body></html>");
-        snippet.loadData(sb.toString(), "text/html", "UTF-8");
 
 
         convertView.setOnClickListener(new View.OnClickListener() {

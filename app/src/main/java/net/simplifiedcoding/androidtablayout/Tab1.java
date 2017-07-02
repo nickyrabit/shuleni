@@ -1,6 +1,5 @@
 package net.simplifiedcoding.androidtablayout;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -12,7 +11,7 @@ import android.widget.ListView;
 import net.simplifiedcoding.androidtablayout.t_MySQL.Downloader;
 
 /**
- * Created by Belal on 2/3/2016.
+ * Created by Nicky on 2/3/2016.
  */
 
 //Our class extending fragment

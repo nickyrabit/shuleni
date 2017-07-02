@@ -4,7 +4,20 @@ package net.simplifiedcoding.androidtablayout.t_DataObject;
  * Created by Nicholas on 6/11/2016.
  */
 public class Events_t {
-    String title,url,detail,time;
+    String title;
+    String url;
+    String hint;
+    String detail;
+    String time;
+
+    public String getHint() {
+        return hint;
+    }
+
+    public void setHint(String hint) {
+        this.hint = hint;
+    }
+
 
     public String getTitle() {
         return title;
