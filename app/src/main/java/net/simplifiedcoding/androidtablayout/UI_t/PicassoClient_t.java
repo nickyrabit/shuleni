@@ -36,10 +36,20 @@ public class PicassoClient_t {
                                                 .load(imageUrl)
                                                 .placeholder(R.mipmap.ic_launcher)
                                                 .error(R.mipmap.ic_launcher)
-                                                .into(img);
+                                                .into(img, new Callback() {
+                                                    @Override
+                                                    public void onSuccess() {
 
-                                    }});
 
+                                                    }
+
+                                                    @Override
+                                                    public void onError() {
+
+                                                    }
+                                                });
+                                    }
+                                });
 
 
 

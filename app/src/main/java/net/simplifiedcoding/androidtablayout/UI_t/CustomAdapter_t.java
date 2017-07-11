@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.squareup.picasso.NetworkPolicy;
+
 import net.simplifiedcoding.androidtablayout.R;
 import net.simplifiedcoding.androidtablayout.t_DataObject.Events_t;
 import net.simplifiedcoding.androidtablayout.t_DetailActivity.Detail2Activity_t;
@@ -87,6 +89,9 @@ public class CustomAdapter_t extends BaseAdapter {
         NewsTitle.setText(s.getTitle());
         time.setText("Published On: "+s.getTime());
         PicassoClient_t.downloadImage(c,s.getUrl(),img);
+
+
+
         snippet.setText(s.getDetail().substring(0,72)+"...");
 
 
