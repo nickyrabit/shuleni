@@ -52,62 +52,43 @@
 
     </RelativeLayout>
 
+<LinearLayout
+    android:id="@+id/comment_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/header"
+    android:orientation="horizontal"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginStart="10dp">
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/comment_title"
+
+        />
+
     <TextView
         android:id="@+id/comments"
-      android:layout_below="@+id/header"
         android:layout_width="match_parent"
-        android:text="string/comments"
+        android:text="@string/comments"
         android:gravity="center_horizontal"
-        android:layout_marginTop="20dp"
         android:layout_height="wrap_content" />
 
 
-    <RelativeLayout
-        android:id="@+id/kiwiliwili"
-        android:layout_below="@+id/comments"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
+</LinearLayout>
 
         <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:theme="@style/PrimaryButton"
-            />
-
-        <Button
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_width="wrap_content"
-            android:theme="@style/PrimaryButton"
-        android:layout_height="wrap_content"/>
-
-        <Button
+            android:id="@+id/call_teacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/button"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="151dp"
-            android:id="@+id/button2"
-            android:theme="@style/PrimaryButton"
-            />
+           android:layout_below="@+id/comment_title"
+            android:text="@string/call_teacher"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/button2"
-            android:layout_alignBottom="@+id/button2"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:theme="@style/PrimaryButton"
-            />
+ 
 
 
 
-
-
-
-    </RelativeLayout>
 </RelativeLayout>
