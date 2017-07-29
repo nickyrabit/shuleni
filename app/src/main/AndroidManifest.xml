@@ -57,6 +57,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--  Login Activity -->
+        <activity
+            android:name=".result_package.SingleItemView"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/ActivityTheme"
+            />
+
 
     </application>
 

@@ -21,11 +21,16 @@
     <string name="comments">"He is a very nice boy and he is very well"</string>
     <string name="notification_title_string">Receive Notifications</string>
     <string name="notification_heading_string">Notification</string>
-    <string name="comment_title">Class Teacher&apos;s Comment:</string>
+    <string name="comment_title">Class Teacher Comment:</string>
     <string name="contact_title">Contacts</string>
     <string name="contact_details">0685 09 77 13</string>
     <string name="call_teacher">Call Teacher</string>
 
+    <string name="title_activity_profile">Profile</string>
+    <string name="result_title_to_choose">Student Report</string>
+    <string name="midterm">Midterm</string>
+    <string name="terminal">Terminal</string>
+    <string name="annual">Annual</string>
 
 
 </resources>

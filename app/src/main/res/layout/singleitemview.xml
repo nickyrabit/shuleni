@@ -86,9 +86,55 @@
             android:text="@string/call_teacher"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"/>
+<View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_below="@+id/call_teacher"
+    android:background="@color/colorAccent"
+    android:layout_marginTop="5dp"
+    android:id="@+id/the_line"/>
 
- 
+    <TextView
+        android:id="@+id/result_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/result_title_to_choose"
+        android:layout_below="@+id/the_line"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/midterm"
+        android:layout_below="@+id/result_title"
+        android:layout_margin="10dp"
+        android:text="@string/midterm"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/terminal"
+        android:layout_below="@+id/midterm"
+        android:layout_margin="10dp"
+        android:text="@string/terminal"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/annual"
+        android:layout_below="@+id/terminal"
+        android:layout_margin="10dp"
+        android:text="@string/annual"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        />
 
 
 </RelativeLayout>

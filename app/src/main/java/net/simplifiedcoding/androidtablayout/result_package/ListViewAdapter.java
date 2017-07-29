@@ -10,7 +10,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import net.simplifiedcoding.androidtablayout.R;
+import net.simplifiedcoding.androidtablayout.Tab3;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -70,12 +72,12 @@ public class ListViewAdapter extends BaseAdapter {
 		flag = (ImageView) itemView.findViewById(R.id.face);
 
 		// Capture position and set results to the TextViews
-		name.setText(resultp.get(MainActivity.NAME));
+		name.setText(resultp.get(Tab3.NAME));
 		// Country.setText(resultp.get(MainActivity.COUNTRY));
 		// Population.setText(resultp.get(MainActivity.POPULATION));
 		// Capture position and set results to the ImageView
 		// Passes flag images URL into ImageLoader.class
-		imageLoader.DisplayImage(resultp.get(MainActivity.FLAG), flag);
+		imageLoader.DisplayImage(resultp.get(Tab3.FLAG), flag);
 		// Capture ListView item click
 		itemView.setOnClickListener(new OnClickListener() {
 
@@ -85,13 +87,13 @@ public class ListViewAdapter extends BaseAdapter {
 				resultp = data.get(position);
 				Intent intent = new Intent(context, SingleItemView.class);
 				// Pass all data rank
-				intent.putExtra("id", resultp.get(MainActivity.RANK));
+				intent.putExtra("id", resultp.get(Tab3.RANK));
 				// Pass all data country
 				//intent.putExtra("name", resultp.get(MainActivity.COUNTRY));
 				// Pass all data population
 				//intent.putExtra("population",resultp.get(MainActivity.POPULATION));
 				// Pass all data flag
-				intent.putExtra("profile_pic", resultp.get(MainActivity.FLAG));
+				intent.putExtra("profile_pic", resultp.get(Tab3.FLAG));
 				// Start SingleItemView Class
 				context.startActivity(intent);
 

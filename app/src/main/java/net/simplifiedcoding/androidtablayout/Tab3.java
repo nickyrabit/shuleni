@@ -31,10 +31,10 @@ public class Tab3 extends Fragment {
     ListViewAdapter adapter;
     ProgressDialog mProgressDialog;
     ArrayList<HashMap<String, String>> arraylist;
-    static String RANK = "id";
-    static String NAME = "name";
+    public static String RANK = "id";
+    public static String NAME = "name";
     //static String POPULATION = "population";
-    static String FLAG = "profile_pic";
+    public static String FLAG = "profile_pic";
       View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

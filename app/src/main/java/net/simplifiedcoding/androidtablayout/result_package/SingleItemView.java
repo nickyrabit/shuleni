@@ -3,10 +3,12 @@ package net.simplifiedcoding.androidtablayout.result_package;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import net.simplifiedcoding.androidtablayout.R;
+
 
 public class SingleItemView extends Activity {
 	// Declare Variables
@@ -34,7 +36,7 @@ public class SingleItemView extends Activity {
 		flag = i.getStringExtra("profile_pic");
 
 		// Locate the TextViews in singleitemview.xml
-		TextView txtrank = (TextView) findViewById(R.id.rank);
+		//TextView txtrank = (TextView) findViewById(R.id.rank);
 		TextView txt_name = (TextView) findViewById(R.id.student_name);
 		TextView txt_comments = (TextView) findViewById(R.id.comments);
 
@@ -42,12 +44,16 @@ public class SingleItemView extends Activity {
 		ImageView imgflag = (ImageView) findViewById(R.id.head_pic_detail);
 
 		// Set results to the TextViews
-		txtrank.setText(rank);
-		txtcountry.setText(country);
-		txtpopulation.setText(population);
+		//txtrank.setText(rank);
+		txt_name.setText(country);
+		txt_comments.setText(population);
 
 		// Capture position and set results to the ImageView
 		// Passes flag images URL into ImageLoader.class
 		imageLoader.DisplayImage(flag, imgflag);
 	}
+
+    public void result(View view) {
+
+    }
 }
