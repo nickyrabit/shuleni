@@ -27,10 +27,12 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     TextView mTitle;
 
 
-    final int[] ICONS = new int[]{
+    final int[] ICONS = new int[]
+            {
             R.drawable.home_selector,
             R.drawable.gallery_selector,
-            R.drawable.result_selector};
+            R.drawable.result_selector
+            };
 
 
     @Override
