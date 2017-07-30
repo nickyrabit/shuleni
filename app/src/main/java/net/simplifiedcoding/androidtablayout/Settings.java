@@ -2,27 +2,13 @@ package net.simplifiedcoding.androidtablayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
-
-import android.view.View;
 import android.view.View.OnClickListener;
-
-import android.widget.CompoundButton;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.CheckBox;
 import android.widget.Toast;
-
-import com.kenumir.materialsettings.MaterialSettings;
-import com.kenumir.materialsettings.items.CheckboxItem;
-import com.kenumir.materialsettings.items.HeaderItem;
-import com.kenumir.materialsettings.storage.StorageInterface;
-
-import static android.widget.RadioGroup.*;
 
 /**
  * Created by Nicholas on 5/17/2017.
@@ -72,8 +58,6 @@ notif.setOnClickListener(new OnClickListener() {
                 // app icon in action bar clicked; goto parent activity.
                 Intent homeIntent = new Intent(this,MainActivity.class);
                 startActivity(homeIntent);
-
-
                 this.finish();
                 return true;
             default:
