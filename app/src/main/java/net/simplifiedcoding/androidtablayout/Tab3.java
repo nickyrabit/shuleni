@@ -32,9 +32,10 @@ public class Tab3 extends Fragment {
     ProgressDialog mProgressDialog;
     ArrayList<HashMap<String, String>> arraylist;
     public static String RANK = "id";
+    public static String PHONE = "phone";
     public static String NAME = "name";
-    //static String POPULATION = "population";
-    public static String FLAG = "profile_pic";
+    public static String COMMENT = "comment";
+    public static String PROFILE_PIC = "profile_pic";
       View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -88,7 +89,8 @@ public class Tab3 extends Fragment {
                     // Retrive JSON Objects
                     map.put("id", jsonobject.getString("id"));
                     map.put("name", jsonobject.getString("name"));
-                    //	map.put("population", jsonobject.getString("population"));
+                    map.put("comment", jsonobject.getString("comment"));
+                    map.put("phone", jsonobject.getString("phone"));
                     map.put("profile_pic", jsonobject.getString("profile_pic"));
                     // Set the JSON Objects into the array
                     arraylist.add(map);

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:id="@+id/header"
@@ -62,7 +63,9 @@
     android:layout_marginLeft="10dp"
     android:layout_marginStart="10dp">
 
-    <TextView android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/class_teacher_title"
+        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/comment_title"
 
@@ -78,14 +81,29 @@
 
 </LinearLayout>
 
-        <Button
-            android:id="@+id/call_teacher"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           android:layout_below="@+id/comment_title"
-            android:text="@string/call_teacher"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"/>
+
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        fancy:fb_borderColor="#FFFFFF"
+        fancy:fb_borderWidth="1dp"
+        fancy:fb_defaultColor="#7ab800"
+        fancy:fb_focusColor="#9bd823"
+        fancy:fb_iconPosition="left"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="Call Teacher"
+        fancy:fb_textColor="#FFFFFF"
+        fancy:fb_iconResource="@drawable/ic_call_black_24dp"
+        fancy:fb_iconPaddingLeft="0dp"
+        fancy:fb_iconPaddingRight= "40dp"
+        android:id="@+id/call_teacher"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/comment_title"
+        android:text="@string/call_teacher"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        />
+
 <View
     android:layout_width="match_parent"
     android:layout_height="1dp"
@@ -99,41 +117,77 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/result_title_to_choose"
-        android:layout_below="@+id/the_line"
         android:gravity="center_horizontal"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="26dp"
+        android:textSize="25sp"
+        android:layout_below="@+id/the_line"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <TextView
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/midterm"
+        android:padding="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/midterm"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="24dp"
+        fancy:fb_textColor="@color/colorPrimaryDark"
+        fancy:fb_text="@string/midterm"
+        fancy:fb_textSize="20dp"
+        fancy:fb_ghost="true"
+        fancy:fb_useSystemFont="true"
+        fancy:fb_borderWidth="1dp"
+        fancy:fb_borderColor="@color/list_divider"
+        fancy:fb_radius="25dp"
+        fancy:fb_focusColor="@color/list_divider"
         android:layout_below="@+id/result_title"
         android:layout_margin="10dp"
-        android:text="@string/midterm"
         android:layout_centerVertical="true"
+        android:onClick="midterm"
         android:gravity="center_horizontal"/>
 
-
-    <TextView
+    <mehdi.sakout.fancybuttons.FancyButton
+        fancy:fb_textColor="@color/colorPrimary"
+        android:padding="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/terminal"
-        android:layout_below="@+id/midterm"
-        android:layout_margin="10dp"
-        android:text="@string/terminal"
-        android:layout_centerVertical="true"
         android:gravity="center_horizontal"
-        />
+        android:layout_marginTop="15dp"
+        fancy:fb_text="@string/terminal"
+        fancy:fb_textSize="20dp"
+        fancy:fb_ghost="true"
+        fancy:fb_useSystemFont="true"
+        fancy:fb_borderWidth="1dp"
+        fancy:fb_borderColor="@color/list_divider"
+        fancy:fb_radius="25dp"
+        fancy:fb_focusColor="@color/list_divider"
+        android:onClick="terminal"
+        android:layout_below="@+id/midterm"
+        android:layout_alignLeft="@+id/annual"
+        android:layout_alignStart="@+id/annual" />
 
-    <TextView
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:padding="12dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/annual"
         android:layout_below="@+id/terminal"
         android:layout_margin="10dp"
-        android:text="@string/annual"
         android:layout_centerVertical="true"
+        android:onClick="annual"
+        fancy:fb_textColor="@color/colorPrimary"
         android:gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="24dp"
+        fancy:fb_text="@string/annual"
+        fancy:fb_textSize="20dp"
+        fancy:fb_ghost="true"
+        fancy:fb_useSystemFont="true"
+        fancy:fb_borderWidth="1dp"
+        fancy:fb_borderColor="@color/list_divider"
+        fancy:fb_radius="25dp"
+        fancy:fb_focusColor="@color/list_divider"
         />
 
 

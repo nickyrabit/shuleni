@@ -51,8 +51,6 @@ public class ListViewAdapter extends BaseAdapter {
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		// Declare Variables
 		TextView name;
-		TextView country;
-		TextView population;
 		ImageView flag;
 
 		inflater = (LayoutInflater) context
@@ -77,7 +75,7 @@ public class ListViewAdapter extends BaseAdapter {
 		// Population.setText(resultp.get(MainActivity.POPULATION));
 		// Capture position and set results to the ImageView
 		// Passes flag images URL into ImageLoader.class
-		imageLoader.DisplayImage(resultp.get(Tab3.FLAG), flag);
+		imageLoader.DisplayImage(resultp.get(Tab3.PROFILE_PIC), flag);
 		// Capture ListView item click
 		itemView.setOnClickListener(new OnClickListener() {
 
@@ -86,15 +84,11 @@ public class ListViewAdapter extends BaseAdapter {
 				// Get the position
 				resultp = data.get(position);
 				Intent intent = new Intent(context, SingleItemView.class);
-				// Pass all data rank
 				intent.putExtra("id", resultp.get(Tab3.RANK));
-				// Pass all data country
-				//intent.putExtra("name", resultp.get(MainActivity.COUNTRY));
-				// Pass all data population
-				//intent.putExtra("population",resultp.get(MainActivity.POPULATION));
-				// Pass all data flag
-				intent.putExtra("profile_pic", resultp.get(Tab3.FLAG));
-				// Start SingleItemView Class
+				intent.putExtra("name", resultp.get(Tab3.NAME));
+				intent.putExtra("comment",resultp.get(Tab3.COMMENT));
+				intent.putExtra("phone",resultp.get(Tab3.PHONE));
+				intent.putExtra("profile_pic", resultp.get(Tab3.PROFILE_PIC));
 				context.startActivity(intent);
 
 			}
