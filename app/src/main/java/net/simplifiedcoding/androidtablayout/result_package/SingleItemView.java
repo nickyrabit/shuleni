@@ -39,7 +39,7 @@ public class SingleItemView extends Activity {
 		// Get the result of country
 		name = i.getStringExtra("name");
 		// Get the result of population
-		comment = i.getStringExtra("comments");
+		comment = i.getStringExtra("comment");
 
 		phone_number = i.getStringExtra("phone");
 

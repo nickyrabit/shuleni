@@ -112,7 +112,7 @@ public class Tab2 extends Fragment {
     private void fetchImages() {
 
         pDialog.setMessage("Downloading json...");
-        pDialog.show();
+//        pDialog.show();
 
         JsonArrayRequest req = new JsonArrayRequest(endpoint,
                 new Response.Listener<JSONArray>() {

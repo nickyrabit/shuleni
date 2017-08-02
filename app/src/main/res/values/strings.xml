@@ -28,9 +28,9 @@
 
     <string name="title_activity_profile">Profile</string>
     <string name="result_title_to_choose">Student Report</string>
-    <string name="midterm">Midterm</string>
-    <string name="terminal">Terminal</string>
-    <string name="annual">Annual</string>
+    <string name="midterm">MIDTERM</string>
+    <string name="terminal">TERMINAL</string>
+    <string name="annual">ANNUAL</string>
 
 
 </resources>
