@@ -4,8 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE"/>
-
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
 
         android:name=".app.AppController"
@@ -13,7 +12,8 @@
         android:icon="@mipmap/shule_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="true">
 
         <!--  Home -->
         <activity android:name=".MainActivity">
@@ -46,7 +46,12 @@
         <activity
             android:name=".Login"
             />
+        <!--  Login Activity -->
+        <activity
+             android:label="@string/app_name"
 
+            android:name=".result_codes.SingleItemView"
+            />
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
@@ -59,11 +64,11 @@
         </activity>
         <!--  Login Activity -->
         <activity
-            android:name=".result_package.SingleItemView"
-            android:label="@string/title_activity_profile"
-            android:theme="@style/ActivityTheme"
-            />
-
+            android:name=".Accounts"
+            android:theme="@android:style/Theme.Holo.Light.Dialog"
+            android:noHistory="true"
+            android:label="Students" >
+        </activity>
 
     </application>
 

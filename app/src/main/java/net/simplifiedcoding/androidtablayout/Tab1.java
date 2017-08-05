@@ -21,7 +21,6 @@ import net.simplifiedcoding.androidtablayout.t_MySQL.Downloader;
 //Our class extending fragment
 public class Tab1 extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
-
     private SwipeRefreshLayout swipeView;
     //public static final String urlAddress = "http://192.168.188.1:8080/shule/news.php?";
     public static final String urlAddress = "https://tixa.000webhostapp.com/shuleni/news.php?";

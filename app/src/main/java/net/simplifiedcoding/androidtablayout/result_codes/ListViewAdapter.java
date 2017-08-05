@@ -1,4 +1,4 @@
-package net.simplifiedcoding.androidtablayout.result_package;
+package net.simplifiedcoding.androidtablayout.result_codes;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
+import net.simplifiedcoding.androidtablayout.Accounts;
 import net.simplifiedcoding.androidtablayout.R;
-import net.simplifiedcoding.androidtablayout.Tab3;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,6 +50,8 @@ public class ListViewAdapter extends BaseAdapter {
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		// Declare Variables
 		TextView name;
+		TextView country;
+		TextView population;
 		ImageView flag;
 
 		inflater = (LayoutInflater) context
@@ -58,7 +59,6 @@ public class ListViewAdapter extends BaseAdapter {
 
 		View itemView = inflater.inflate(R.layout.listview_item, parent, false);
 		// Get the position
-
 		resultp = data.get(position);
 
 		// Locate the TextViews in listview_item.xml
@@ -70,12 +70,12 @@ public class ListViewAdapter extends BaseAdapter {
 		flag = (ImageView) itemView.findViewById(R.id.face);
 
 		// Capture position and set results to the TextViews
-		name.setText(resultp.get(Tab3.NAME));
+		name.setText(resultp.get(Accounts.NAME));
 		// Country.setText(resultp.get(MainActivity.COUNTRY));
 		// Population.setText(resultp.get(MainActivity.POPULATION));
 		// Capture position and set results to the ImageView
 		// Passes flag images URL into ImageLoader.class
-		imageLoader.DisplayImage(resultp.get(Tab3.PROFILE_PIC), flag);
+		imageLoader.DisplayImage(resultp.get(Accounts.PROFILE_PIC), flag);
 		// Capture ListView item click
 		itemView.setOnClickListener(new OnClickListener() {
 
@@ -84,11 +84,17 @@ public class ListViewAdapter extends BaseAdapter {
 				// Get the position
 				resultp = data.get(position);
 				Intent intent = new Intent(context, SingleItemView.class);
-				intent.putExtra("id", resultp.get(Tab3.RANK));
-				intent.putExtra("name", resultp.get(Tab3.NAME));
-				intent.putExtra("comment",resultp.get(Tab3.COMMENT));
-				intent.putExtra("phone",resultp.get(Tab3.PHONE));
-				intent.putExtra("profile_pic", resultp.get(Tab3.PROFILE_PIC));
+				// Pass all data rank
+				intent.putExtra("id", resultp.get(Accounts.RANK));
+				// Pass all data country
+				intent.putExtra("name", resultp.get(Accounts.NAME));
+				// Pass all data population
+				intent.putExtra("comment",resultp.get(Accounts.COMMENT));
+				// Pass all data population
+				intent.putExtra("phone",resultp.get(Accounts.PHONE));
+				// Pass all data flag
+				intent.putExtra("profile_pic", resultp.get(Accounts.PROFILE_PIC));
+				// Start SingleItemView Class
 				context.startActivity(intent);
 
 			}

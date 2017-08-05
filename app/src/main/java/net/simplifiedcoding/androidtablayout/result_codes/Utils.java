@@ -1,4 +1,4 @@
-package net.simplifiedcoding.androidtablayout.result_package;
+package net.simplifiedcoding.androidtablayout.result_codes;
 import java.io.InputStream;
 import java.io.OutputStream;
 

@@ -1,12 +1,10 @@
-package net.simplifiedcoding.androidtablayout.result_package;
+package net.simplifiedcoding.androidtablayout.result_codes;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.widget.ImageView;
-
-import net.simplifiedcoding.androidtablayout.R;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -38,7 +36,7 @@ public class ImageLoader {
 		executorService = Executors.newFixedThreadPool(5);
 	}
 
-	final int stub_id = R.drawable.temp_img;
+	/////private final int stub_id = R.drawable.temp_img;
 
 	public void DisplayImage(String url, ImageView imageView) {
 		imageViews.put(imageView, url);
@@ -47,7 +45,7 @@ public class ImageLoader {
 			imageView.setImageBitmap(bitmap);
 		else {
 			queuePhoto(url, imageView);
-			imageView.setImageResource(stub_id);
+		//	imageView.setImageResource(stub_id);
 		}
 	}
 
@@ -182,8 +180,10 @@ public class ImageLoader {
 				return;
 			if (bitmap != null)
 				photoToLoad.imageView.setImageBitmap(bitmap);
-			else
-				photoToLoad.imageView.setImageResource(stub_id);
+			else{
+
+			}
+		//		photoToLoad.imageView.setImageResource(stub_id);
 		}
 	}
 

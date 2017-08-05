@@ -4,7 +4,7 @@
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_marginTop="10dp"
-     >
+ >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,15 +12,7 @@
         android:background="@drawable/list_selector"
         >
 
-        <ImageView
-            android:id="@+id/background"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/temp_img"
-            android:alpha="0.1"
-            android:padding="1dp" />
+
 
 
         <TextView
@@ -40,7 +32,6 @@
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:layout_toRightOf="@+id/name_label"
-            android:layout_toEndOf="@+id/name_label"
             android:text="@string/name_detail"/>
 
         <ImageView
@@ -48,10 +39,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
             android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
             android:layout_marginStart="20dp"
-            android:src="@drawable/image_bg"
+            android:background="@drawable/image_bg"
             android:padding="1dp" />
 
     </RelativeLayout>
