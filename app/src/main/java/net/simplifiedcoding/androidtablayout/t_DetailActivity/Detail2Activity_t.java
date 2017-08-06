@@ -51,7 +51,7 @@ public class Detail2Activity_t extends AppCompatActivity {
 
         //BIND
         TitleTxt.setText("\t" + title);
-       // DetailsTxt.setText("\t" + details);
+        // DetailsTxt.setText("\t" + details);
 
         //placing the HTML Wb view
         StringBuilder sb = new StringBuilder("<html><body>");

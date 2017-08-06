@@ -1,6 +1,5 @@
 package net.simplifiedcoding.androidtablayout;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -9,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import net.simplifiedcoding.androidtablayout.result_codes.JSONfunctions;
 import net.simplifiedcoding.androidtablayout.result_codes.ListViewAdapter;
@@ -24,7 +24,7 @@ import java.util.HashMap;
  * Created by NICHOLAUS L. NGAILO on 8/3/2017.
  */
 
-public class Accounts extends Activity {
+public class Accounts extends AppCompatActivity {
 
     // Declare Variables
     JSONObject jsonobject;
@@ -38,13 +38,18 @@ public class Accounts extends Activity {
     public  static String NAME = "name";
     public  static String COMMENT = "comment";
     public  static String PROFILE_PIC = "profile_pic";
-
+    TextView title_dialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account);
+
+        title_dialog = (TextView) findViewById(R.id.title);
+
          new DownloadJSON().execute();
+
+
 
     }
 
@@ -57,7 +62,7 @@ public class Accounts extends Activity {
             // Create a progressdialog
             mProgressDialog = new ProgressDialog(Accounts.this);
             // Set progressdialog title
-            mProgressDialog.setTitle("Android JSON Parse Tutorial");
+            mProgressDialog.setTitle("Loading Accounts");
             // Set progressdialog message
             mProgressDialog.setMessage("Loading...");
             mProgressDialog.setIndeterminate(false);
@@ -103,8 +108,16 @@ public class Accounts extends Activity {
             adapter = new ListViewAdapter(Accounts.this, arraylist);
             // Set the adapter to the ListView
             listview.setAdapter(adapter);
+
+          try{
             // Close the progressdialog
             mProgressDialog.dismiss();
+          }
+          catch(Exception e)
+          {
+              Log.wtf("WTF","What the hell is going on");
+          }
+
         }
     }
 
@@ -114,11 +127,11 @@ public class Accounts extends Activity {
         finish();
     }
 
-
-
     @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+        super.onBackPressed();
         finish();
     }
+
 }

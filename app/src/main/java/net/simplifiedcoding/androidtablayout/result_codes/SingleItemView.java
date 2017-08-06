@@ -3,10 +3,17 @@ package net.simplifiedcoding.androidtablayout.result_codes;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import net.simplifiedcoding.androidtablayout.Accounts;
 import net.simplifiedcoding.androidtablayout.R;
+import net.simplifiedcoding.androidtablayout.results.Annual;
+import net.simplifiedcoding.androidtablayout.results.Midterm;
+import net.simplifiedcoding.androidtablayout.results.Terminal;
+
+import mehdi.sakout.fancybuttons.FancyButton;
 
 public class SingleItemView extends Activity {
 	// Declare Variables
@@ -16,7 +23,7 @@ public class SingleItemView extends Activity {
 	String face;
 	String comment;
 	ImageLoader imageLoader = new ImageLoader(this);
-
+	FancyButton terminal,annual,midterm;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -52,5 +59,38 @@ public class SingleItemView extends Activity {
 		// Capture position and set results to the ImageView
 		// Passes flag images URL into ImageLoader.class
 		imageLoader.DisplayImage(face, imgflag);
+
+		midterm.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+			   Intent intent = new Intent(SingleItemView.this, Midterm.class);
+				// Pass all data id
+				intent.putExtra("id", rank);
+				startActivity(intent);
+			}
+		});
+
+		annual.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(SingleItemView.this, Annual.class);
+				// Pass all data id
+				intent.putExtra("id", rank);
+				startActivity(intent);
+			}
+		});
+
+
+		terminal.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(SingleItemView.this, Terminal.class);
+				// Pass all data id
+				intent.putExtra("id", rank);
+				startActivity(intent);
+			}
+		});
 	}
+
+
 }

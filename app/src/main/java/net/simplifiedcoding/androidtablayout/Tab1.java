@@ -3,6 +3,7 @@ package net.simplifiedcoding.androidtablayout;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
@@ -29,15 +30,19 @@ public class Tab1 extends Fragment implements SwipeRefreshLayout.OnRefreshListen
     //doing the initializing for boolen thingy
     boolean loaded=false;
 
+
+
     //Overriden method onCreateView
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         //Returning the layout file after inflating
         //Change R.layout.tab1 in you classes
        // ((MainActivity) getActivity()).setActionBarTitle("Home");
+        setRetainInstance(true);
         LayoutInflater lf = getActivity().getLayoutInflater();
         final View view =  lf.inflate(R.layout.tab1, container, false);
+
+
         lv = (ListView) view.findViewById(R.id.news_lv);
 
         //declaring the swipe stufs to refresh
@@ -51,7 +56,6 @@ public class Tab1 extends Fragment implements SwipeRefreshLayout.OnRefreshListen
         if(savedInstanceState == null) {
         final FiftyShadesOf fiftyShadesOf = FiftyShadesOf.with(getContext()).on(R.id.container_toolbar).start();
         }
-
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         if(!prefs.getBoolean("irstTime", false)) {
@@ -92,6 +96,7 @@ public class Tab1 extends Fragment implements SwipeRefreshLayout.OnRefreshListen
         new Downloader(getContext(), urlAddress, lv).execute();
         swipeView.setRefreshing(false);
     }
+
 
 
 }

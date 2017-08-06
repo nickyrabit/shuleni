@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+ >
+     <TextView
+         android:id="@+id/title"
+         android:layout_width="match_parent"
+         android:layout_height="30dp"
+         android:gravity="center_horizontal"
+         android:text="@string/dialog_title"
+         android:textSize="18sp"
+         android:background="@color/ms_gray6"
+         android:textColor="@color/colorPrimary"
+         android:layout_centerHorizontal="true"/>
+
      <ListView
         android:id="@+id/listview"
         android:layout_below="@+id/title"
@@ -9,8 +21,4 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"/>
 
-
-<Button
-
-    />
 </RelativeLayout>

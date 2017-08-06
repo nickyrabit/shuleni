@@ -51,7 +51,7 @@ public class Tab2 extends Fragment {
 
    //     ((MainActivity) getActivity()).setActionBarTitle("Gallery");
 
-
+        setRetainInstance(true);
 
 
         LayoutInflater lf = getActivity().getLayoutInflater();
@@ -111,7 +111,7 @@ public class Tab2 extends Fragment {
 
     private void fetchImages() {
 
-        pDialog.setMessage("Downloading json...");
+      //  pDialog.setMessage("Loading Gallery...");
 //        pDialog.show();
 
         JsonArrayRequest req = new JsonArrayRequest(endpoint,

@@ -8,6 +8,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -56,15 +57,23 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
        //Initializing viewPager
         viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager.setCurrentItem(1);
+
 
         //Creating our pager adapter
-        Pager adapter = new Pager(getSupportFragmentManager(), tabLayout.getTabCount());
-
+        final Pager adapter = new Pager(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setOffscreenPageLimit(2);
         //Adding adapter to pager
         viewPager.setAdapter(adapter);
 
+
+
+        //prevnting rrefreshing of the fragments
+
+
         //Adding onTabSelectedListener to swipe views
         tabLayout.setOnTabSelectedListener(this);
+
 /**
        viewPager.setOnTouchListener(new View.OnTouchListener()
         {
@@ -98,8 +107,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         //tabLayout.setupWithViewPager(viewPager);
 
         //setting the wordsin  the title
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(
-                tabLayout));
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
 //setitng the icons
      /**   tabLayout.setupWithViewPager(viewPager);
@@ -113,16 +121,25 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
                 //Set title here using setTitle()
+
+                //trying somehting
+                adapter.notifyDataSetChanged();
+
+
                 switch(tab.getPosition())
                 {
                     case 0:
                         ((MainActivity.this)).setActionBarTitle("Home");
+                        Log.d("IS_THIS","Home is Clicked");
                         break;
                     case 1:
                         ((MainActivity.this)).setActionBarTitle("Gallery");
+                        Log.d("IS_THIS","Gallery is Clicked");
                         break;
                     case 2:
                         ((MainActivity.this)).setActionBarTitle("Result");
+                        Log.d("IS_THIS","Result is Clicked");
+
                         break;
                 }
             }
@@ -215,4 +232,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
     }
     **/
+
+
+
 }

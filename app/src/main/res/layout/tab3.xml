@@ -2,7 +2,70 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
 
-   >
+    >
+
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/heading_at_result"
+        android:layout_marginTop="142dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/select_a_child"
+        android:layout_alignEnd="@+id/select_a_child" />
+
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:layout_height="wrap_content"
+        android:id="@+id/select_a_child"
+        android:gravity="center_horizontal"
+        fancy:fb_text="@string/dialog_title"
+        fancy:fb_textColor="@color/colorPrimaryDark"
+        fancy:fb_textSize="20dp"
+        fancy:fb_ghost="true"
+        fancy:fb_useSystemFont="true"
+        fancy:fb_borderWidth="1dp"
+         fancy:fb_radius="25dp"
+
+        fancy:fb_borderColor="@color/list_divider"
+        fancy:fb_focusColor="@color/colorPrimary"
+
+         fancy:fb_textGravity="center_vertical"
+        android:layout_width="200dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/heading"
+        android:layout_alignLeft="@+id/faq"
+        android:layout_alignStart="@+id/faq" />
+
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:layout_height="wrap_content"
+        android:id="@+id/faq"
+        android:gravity="center_horizontal"
+        fancy:fb_text="@string/faq"
+        fancy:fb_textColor="@color/colorPrimaryDark"
+        fancy:fb_textSize="20dp"
+        fancy:fb_ghost="true"
+        fancy:fb_useSystemFont="true"
+        fancy:fb_borderWidth="1dp"
+        fancy:fb_borderColor="@color/list_divider"
+        fancy:fb_focusColor="@color/colorPrimary"
+        fancy:fb_radius="25dp"
+
+        fancy:fb_textGravity="center_vertical"
+
+        android:layout_width="200dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/select_a_child"
+        android:layout_centerHorizontal="true" />
+
+
 
 </RelativeLayout>

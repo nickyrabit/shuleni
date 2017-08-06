@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.simplifiedcoding.androidtablayout">
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <application
 
+    <application
         android:name=".app.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/shule_launcher"
@@ -15,7 +14,7 @@
         android:theme="@style/AppTheme"
         android:fullBackupContent="true">
 
-        <!--  Home -->
+        <!-- Home -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <!--  About Activity -->
+        <!--About Activity-->
         <activity
             android:name=".About"
             android:label="@string/about"
@@ -42,16 +41,18 @@
             android:theme="@style/ActivityTheme" />
 
 
-        <!--  Login Activity -->
+        <!--Login Activity-->
         <activity
             android:name=".Login"
             />
-        <!--  Login Activity -->
+        <!--Login Activity-->
         <activity
              android:label="@string/app_name"
 
             android:name=".result_codes.SingleItemView"
             />
+
+        <!--Login Activity-->
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
@@ -62,10 +63,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--  Login Activity -->
+
+        <!--Account_Activity-->
         <activity
             android:name=".Accounts"
-            android:theme="@android:style/Theme.Holo.Light.Dialog"
+            android:theme="@style/MyDialogTheme"
             android:noHistory="true"
             android:label="Students" >
         </activity>
