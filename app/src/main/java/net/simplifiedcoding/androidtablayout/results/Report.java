@@ -10,19 +10,19 @@ import net.simplifiedcoding.androidtablayout.R;
 /** * Created by NICHOLAUS L. NGAILO on 7/30/2017.
  */
 
-public class Annual extends AppCompatActivity {
-    String student_id;
+public class Report extends AppCompatActivity {
+    String student_id,test_id;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.annual);
-
-
+        setContentView(R.layout.report);
 
         Intent i = getIntent();
         // Get the result of rank
         student_id = i.getStringExtra("id");
+        test_id = i.getStringExtra("test");
+
 
 
     }

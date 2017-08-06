@@ -7,11 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import net.simplifiedcoding.androidtablayout.Accounts;
 import net.simplifiedcoding.androidtablayout.R;
-import net.simplifiedcoding.androidtablayout.results.Annual;
-import net.simplifiedcoding.androidtablayout.results.Midterm;
-import net.simplifiedcoding.androidtablayout.results.Terminal;
+import net.simplifiedcoding.androidtablayout.results.Report;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
@@ -63,9 +60,10 @@ public class SingleItemView extends Activity {
 		midterm.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-			   Intent intent = new Intent(SingleItemView.this, Midterm.class);
+			   Intent intent = new Intent(SingleItemView.this, Report.class);
 				// Pass all data id
 				intent.putExtra("id", rank);
+				intent.putExtra("test", "midterm");
 				startActivity(intent);
 			}
 		});
@@ -73,9 +71,10 @@ public class SingleItemView extends Activity {
 		annual.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(SingleItemView.this, Annual.class);
+				Intent intent = new Intent(SingleItemView.this, Report.class);
 				// Pass all data id
 				intent.putExtra("id", rank);
+				intent.putExtra("test", "report");
 				startActivity(intent);
 			}
 		});
@@ -84,9 +83,10 @@ public class SingleItemView extends Activity {
 		terminal.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(SingleItemView.this, Terminal.class);
+				Intent intent = new Intent(SingleItemView.this, Report.class);
 				// Pass all data id
 				intent.putExtra("id", rank);
+				intent.putExtra("test", "terminal");
 				startActivity(intent);
 			}
 		});

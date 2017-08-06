@@ -35,6 +35,8 @@
             android:theme="@style/ActivityTheme"
             />
 
+
+
         <!--  Details Activity -->
         <activity android:name=".t_DetailActivity.Detail2Activity_t"
             android:label="@string/title_activity_news"
@@ -71,6 +73,14 @@
             android:noHistory="true"
             android:label="Students" >
         </activity>
+
+
+        <!--  Report Activity -->
+        <activity
+            android:name=".results.Report"
+            android:label="@string/report"
+            android:theme="@style/ActivityTheme"
+            />
 
     </application>
 
