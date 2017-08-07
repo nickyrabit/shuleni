@@ -20,8 +20,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Created by NICHOLAUS L. NGAILO on 8/3/2017.
+/** * Created by NICHOLAUS L. NGAILO on 8/3/2017.
  */
 
 public class Accounts extends AppCompatActivity {
@@ -38,6 +37,8 @@ public class Accounts extends AppCompatActivity {
     public  static String NAME = "name";
     public  static String COMMENT = "comment";
     public  static String PROFILE_PIC = "profile_pic";
+
+
     TextView title_dialog;
 
     @Override
@@ -109,6 +110,7 @@ public class Accounts extends AppCompatActivity {
             // Set the adapter to the ListView
             listview.setAdapter(adapter);
 
+
           try{
             // Close the progressdialog
             mProgressDialog.dismiss();
@@ -124,7 +126,11 @@ public class Accounts extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        finish();
+        if (mProgressDialog != null) {
+            mProgressDialog.dismiss();
+            mProgressDialog = null;
+        }
+            finish();
     }
 
     @Override

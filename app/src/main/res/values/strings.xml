@@ -36,6 +36,10 @@
     <string name="heading_at_result">Find all about your Child</string>
 
     <string name="faq_title">Frequent Asked Questions Area</string>
-    <string name="report">Frequent Asked Questions Area</string>
+    <string name="report">Report</string>
 
+    <string name="back">Back</string>
+    <string name="report_label">Report For </string>
+    <string name="pos">Position</string>
+    <string name="actual_position">23</string>
 </resources>

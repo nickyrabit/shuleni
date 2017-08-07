@@ -20,7 +20,7 @@ public class SingleItemView extends Activity {
 	String face;
 	String comment;
 	ImageLoader imageLoader = new ImageLoader(this);
-	FancyButton terminal,annual,midterm;
+	FancyButton terminalbtn,annualbtn,midtermbtn;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -47,6 +47,10 @@ public class SingleItemView extends Activity {
 		// Locate the ImageView in singleitemview.xml
 		ImageView imgflag = (ImageView) findViewById(R.id.head_pic_detail);
 
+		midtermbtn = (FancyButton) findViewById(R.id.midterm);
+		annualbtn = (FancyButton) findViewById(R.id.annual);
+		terminalbtn = (FancyButton) findViewById(R.id.terminal);
+
 		// Set results to the TextViews
 		//txtrank.setText(rank);
 		txt_name.setText(name);
@@ -57,7 +61,7 @@ public class SingleItemView extends Activity {
 		// Passes flag images URL into ImageLoader.class
 		imageLoader.DisplayImage(face, imgflag);
 
-		midterm.setOnClickListener(new View.OnClickListener() {
+		midtermbtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 			   Intent intent = new Intent(SingleItemView.this, Report.class);
@@ -68,7 +72,7 @@ public class SingleItemView extends Activity {
 			}
 		});
 
-		annual.setOnClickListener(new View.OnClickListener() {
+		annualbtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(SingleItemView.this, Report.class);
@@ -80,7 +84,7 @@ public class SingleItemView extends Activity {
 		});
 
 
-		terminal.setOnClickListener(new View.OnClickListener() {
+		terminalbtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(SingleItemView.this, Report.class);
