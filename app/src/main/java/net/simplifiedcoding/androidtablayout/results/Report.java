@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ramotion.foldingcell.FoldingCell;
@@ -57,6 +58,7 @@ public class Report extends AppCompatActivity {
     public static String AVERAGE ="avg";
     public static String MATH ="math";
     FancyButton button_fold_;
+    TextView text_fold_;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -78,10 +80,10 @@ public class Report extends AppCompatActivity {
         // get our folding cell
         final FoldingCell fc = (FoldingCell) findViewById(R.id.folding_cell);
          button_fold_ = (FancyButton) findViewById(R.id.button_fold);
-
+        text_fold_ = (TextView) findViewById(R.id.see_more);
 
         // attach click listener to folding cell
-        fc.setOnClickListener(new View.OnClickListener() {
+        text_fold_.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fc.toggle(false);

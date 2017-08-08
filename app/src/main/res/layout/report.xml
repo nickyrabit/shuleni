@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorIndicator"
-    >
+    android:background="@color/colorIndicator">
     <com.ramotion.foldingcell.FoldingCell
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/folding_cell"
@@ -55,6 +54,17 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginLeft="5dp"
                     android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/see_more"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_more"
+                    android:layout_alignBottom="@+id/head_pic_detail_at_report"
+                    android:layout_centerHorizontal="true" />
+
+
                 <TextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
