@@ -1,12 +1,18 @@
 package net.simplifiedcoding.androidtablayout.result_codes;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import net.simplifiedcoding.androidtablayout.MainActivity;
 import net.simplifiedcoding.androidtablayout.R;
 import net.simplifiedcoding.androidtablayout.results.Report;
 
@@ -20,7 +26,8 @@ public class SingleItemView extends Activity {
 	String face;
 	String comment;
 	ImageLoader imageLoader = new ImageLoader(this);
-	FancyButton terminalbtn,annualbtn,midtermbtn;
+	FancyButton terminalbtn, annualbtn, midtermbtn;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -50,7 +57,7 @@ public class SingleItemView extends Activity {
 		midtermbtn = (FancyButton) findViewById(R.id.midterm);
 		annualbtn = (FancyButton) findViewById(R.id.annual);
 		terminalbtn = (FancyButton) findViewById(R.id.terminal);
-
+		Button call = (Button) findViewById(R.id.call_teacher);
 		// Set results to the TextViews
 		//txtrank.setText(rank);
 		txt_name.setText(name);
@@ -60,6 +67,15 @@ public class SingleItemView extends Activity {
 		// Capture position and set results to the ImageView
 		// Passes flag images URL into ImageLoader.class
 		imageLoader.DisplayImage(face, imgflag);
+
+		call.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:"+number));
+                startActivity(callIntent);
+			}});
+
 
 		midtermbtn.setOnClickListener(new View.OnClickListener() {
 			@Override

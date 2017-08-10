@@ -3,7 +3,6 @@ package net.simplifiedcoding.androidtablayout;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
@@ -41,8 +40,6 @@ public class Tab1 extends Fragment implements SwipeRefreshLayout.OnRefreshListen
         setRetainInstance(true);
         LayoutInflater lf = getActivity().getLayoutInflater();
         final View view =  lf.inflate(R.layout.tab1, container, false);
-
-
         lv = (ListView) view.findViewById(R.id.news_lv);
 
         //declaring the swipe stufs to refresh
@@ -75,6 +72,7 @@ public class Tab1 extends Fragment implements SwipeRefreshLayout.OnRefreshListen
             }
         }, 1000);
 
+        new Downloader(getContext(), urlAddress, lv).execute();
 
        return  view;
 

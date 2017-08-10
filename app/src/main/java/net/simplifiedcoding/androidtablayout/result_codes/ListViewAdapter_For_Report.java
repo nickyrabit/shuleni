@@ -76,7 +76,7 @@ public class ListViewAdapter_For_Report extends BaseAdapter {
 		// Locate the ImageView in listview_item.xml
 		flag = (ImageView) itemView.findViewById(R.id.face);
 		// Capture position and set results to the TextViews
-		name.setText(resultp.get(Report.NAME));
+//		name.setText(resultp.get(Report.NAME));
 		total.setText(resultp.get(Report.TOTAL));
 		geography.setText(resultp.get(Report.GEOGRAPHY));
 		history.setText(resultp.get(Report.HISTORY));

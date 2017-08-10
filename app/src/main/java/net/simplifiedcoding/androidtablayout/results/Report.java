@@ -18,15 +18,12 @@ import net.simplifiedcoding.androidtablayout.R;
 import net.simplifiedcoding.androidtablayout.result_codes.JSONfunctions;
 import net.simplifiedcoding.androidtablayout.result_codes.ListViewAdapter_For_Report;
 
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import mehdi.sakout.fancybuttons.FancyButton;
 
 /** * Created by NICHOLAUS L. NGAILO on 7/30/2017.
  */
@@ -40,8 +37,7 @@ public class Report extends AppCompatActivity {
     ListViewAdapter_For_Report adapter;
     ProgressDialog mProgressDialog2;
     ArrayList<HashMap<String, String>> arraylist;
-    public static String RANK = "id";
-    public static String PHONE = "phone";
+
     public static String NAME = "name";
     public static String COMMENT = "comment";
     public static String PROFILE_PIC = "profile_pic";
@@ -57,51 +53,48 @@ public class Report extends AppCompatActivity {
     public static String EXTRACURRICULAR ="extra";
     public static String AVERAGE ="avg";
     public static String MATH ="math";
-    FancyButton button_fold_;
-    TextView text_fold_;
 
+    TextView text_fold_;
+    TextView mTitle;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.report);
-
         Intent i = getIntent();
         // Get the result of rank
         student_id = i.getStringExtra("id");
         test_id = i.getStringExtra("test");
-        try{new DownloadJSON().execute();
+
+        try
+
+        {
+
+            new DownloadJSON().execute();
         }
         catch (Exception r)
         {
             Toast.makeText(getApplicationContext(),"No Internet Connection",Toast.LENGTH_LONG).show();
 
         }
-
         // get our folding cell
         final FoldingCell fc = (FoldingCell) findViewById(R.id.folding_cell);
-         button_fold_ = (FancyButton) findViewById(R.id.button_fold);
+        //FancyButton button_fold_ = (FancyButton) findViewById(R.id.button_fold);
         text_fold_ = (TextView) findViewById(R.id.see_more);
 
         // attach click listener to folding cell
         text_fold_.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                @Override
+                public void onClick(View v) {
                 fc.toggle(false);
             }
         });
 
 
-       button_fold_.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fc.toggle(true);
-            }
-        });
-
 
 
 
     }
+
     // DownloadJSON AsyncTask
     private class DownloadJSON extends AsyncTask<Void, Void, Void> {
 

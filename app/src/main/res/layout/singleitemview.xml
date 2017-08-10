@@ -95,7 +95,6 @@ android:theme="@style/PrimaryButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/call_teacher"
-        android:layout_marginTop="18dp"
         android:layout_below="@+id/comments"
         android:layout_alignLeft="@+id/midterm"
         android:layout_alignStart="@+id/midterm" />
