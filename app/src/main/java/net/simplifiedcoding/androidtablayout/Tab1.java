@@ -14,8 +14,7 @@ import com.github.florent37.fiftyshadesof.FiftyShadesOf;
 
 import net.simplifiedcoding.androidtablayout.t_MySQL.Downloader;
 
-/**
- * Created by Nicky on 2/3/2016.
+/* Created by Nicky on 2/3/2016.
  */
 
 //Our class extending fragment

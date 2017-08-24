@@ -86,15 +86,10 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         });
 
  **/
-
         mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
-
-       String fontPath = "fonts/Comfortaa.ttf";
+        String fontPath = "fonts/Comfortaa.ttf";
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
         mTitle.setTypeface(tf);
-
-
-
 
         setSupportActionBar(toolbar);
         mTitle.setText(toolbar.getTitle());

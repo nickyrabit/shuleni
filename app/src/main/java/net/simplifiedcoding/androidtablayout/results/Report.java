@@ -1,13 +1,19 @@
 package net.simplifiedcoding.androidtablayout.results;
 
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,6 +62,7 @@ public class Report extends AppCompatActivity {
 
     TextView text_fold_;
     TextView mTitle;
+    Button shusha;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,10 +73,8 @@ public class Report extends AppCompatActivity {
         test_id = i.getStringExtra("test");
 
         try
-
         {
-
-            new DownloadJSON().execute();
+           new DownloadJSON().execute();
         }
         catch (Exception r)
         {
@@ -80,7 +85,7 @@ public class Report extends AppCompatActivity {
         final FoldingCell fc = (FoldingCell) findViewById(R.id.folding_cell);
         //FancyButton button_fold_ = (FancyButton) findViewById(R.id.button_fold);
         text_fold_ = (TextView) findViewById(R.id.see_more);
-
+        shusha = (Button) findViewById(R.id.download);
         // attach click listener to folding cell
         text_fold_.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -90,10 +95,51 @@ public class Report extends AppCompatActivity {
         });
 
 
+shusha.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
 
+        //Checking id there is internet available
+        boolean check =isDownloadManagerAvailable(getBaseContext());
+        if(check=false)
+        {
+            Toast.makeText(getApplicationContext(),"No Internet Connection",Toast.LENGTH_LONG).show();
+        }
+        else{
+            String url = "http://tixa.000webhostapp.com/shuleni/report.pdf";
+            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+            request.setDescription("Please Wait...");
+            request.setTitle("Download Student Report");
+// in order for this if to run, you must use the android 3.2 to compile your app
+            request.allowScanningByMediaScanner();
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "report.pdf");
+
+// get download service and enqueue file
+            DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+            manager.enqueue(request);
+        }
 
 
     }
+});
+
+    }
+
+
+    /**
+     * @param context used to check the device version and DownloadManager information
+     * @return true if the download manager is available
+     */
+    public static boolean isDownloadManagerAvailable(Context context) {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+            return true;
+        }
+        return false;
+    }
+
+
 
     // DownloadJSON AsyncTask
     private class DownloadJSON extends AsyncTask<Void, Void, Void> {

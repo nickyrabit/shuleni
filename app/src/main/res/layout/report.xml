@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -41,8 +42,8 @@
                     android:layout_height="90dp"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
-                    android:background="@drawable/logo_vva"
-                    android:alpha="0.1"
+                    android:background="@drawable/school_logo"
+                    android:alpha="0.2"
                     android:padding="1dp" />
                 <ImageView
                     android:id="@+id/head_pic_detail_at_report"
@@ -99,4 +100,24 @@
 
 </FrameLayout>
 </com.ramotion.foldingcell.FoldingCell>
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:layout_below="@+id/folding_cell"
+        android:id="@+id/download"
+
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        fancy:fb_textColor="@color/colorPrimaryDark"
+        fancy:fb_text="@string/download"
+        fancy:fb_textSize="20dp"
+        fancy:fb_ghost="true"
+        fancy:fb_useSystemFont="true"
+        fancy:fb_borderWidth="1dp"
+        fancy:fb_borderColor="@color/list_divider"
+        fancy:fb_radius="25dp"
+        fancy:fb_focusColor="@color/list_divider"
+
+        />
 </RelativeLayout>

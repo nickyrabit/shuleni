@@ -43,4 +43,5 @@
     <string name="pos">Position</string>
     <string name="actual_position">23</string>
     <string name="see_more">See More</string>
+    <string name="download">Download Report</string>
 </resources>
