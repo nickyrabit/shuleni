@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.simplifiedcoding.androidtablayout">
+    package="net.nickyrabit.androidtablayout">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     
     <application
-        android:name=".app.AppController"
+        android:name="net.nickyrabit.androidtablayout.app.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/shule_launcher"
         android:label="@string/app_name"
@@ -18,7 +18,7 @@
         android:fullBackupContent="true">
 
         <!-- Home -->
-        <activity android:name=".MainActivity">
+        <activity android:name="net.nickyrabit.androidtablayout.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -27,13 +27,13 @@
 
         <!--About Activity-->
         <activity
-            android:name=".About"
+            android:name="net.nickyrabit.androidtablayout.About"
             android:label="@string/about"
             android:theme="@style/ActivityTheme" />
 
         <!--  Settings Activity -->
         <activity
-            android:name=".Settings"
+            android:name="net.nickyrabit.androidtablayout.Settings"
             android:label="@string/settings"
             android:theme="@style/ActivityTheme"
             />
@@ -41,25 +41,25 @@
 
 
         <!--  Details Activity -->
-        <activity android:name=".t_DetailActivity.Detail2Activity_t"
+        <activity android:name="net.nickyrabit.androidtablayout.t_DetailActivity.Detail2Activity_t"
             android:label="@string/title_activity_news"
             android:theme="@style/ActivityTheme" />
 
 
         <!--Login Activity-->
         <activity
-            android:name=".Login"
+            android:name="net.nickyrabit.androidtablayout.Login"
             />
         <!--Login Activity-->
         <activity
              android:label="@string/app_name"
 
-            android:name=".result_codes.SingleItemView"
+            android:name="net.nickyrabit.androidtablayout.result_codes.SingleItemView"
             />
 
         <!--Login Activity-->
         <activity
-            android:name=".SplashActivity"
+            android:name="net.nickyrabit.androidtablayout.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -71,7 +71,7 @@
 
         <!--Account_Activity-->
         <activity
-            android:name=".Accounts"
+            android:name="net.nickyrabit.androidtablayout.Accounts"
             android:theme="@style/MyDialogTheme"
             android:noHistory="true"
             android:label="Students" >
@@ -80,7 +80,7 @@
 
         <!--  Report Activity -->
         <activity
-            android:name=".results.Report"
+            android:name="net.nickyrabit.androidtablayout.results.Report"
             android:label="@string/report"
             android:theme="@style/ActivityTheme"
             />
